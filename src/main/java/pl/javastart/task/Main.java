@@ -7,6 +7,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Square square = new Square();
-        square.run(scanner);
+        System.out.println("Podaj rozmiar tablicy:");
+        int[] array = square.createArray(scanner.nextInt());
+        System.out.printf("Wprowadź %d liczb:\n", array.length);
+        square.fillArray(array);
+        square.sumOfArray(array);
     }
 }

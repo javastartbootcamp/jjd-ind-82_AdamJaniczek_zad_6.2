@@ -3,29 +3,20 @@ package pl.javastart.task;
 import java.util.Scanner;
 
 public class Square {
-    private int[] array;
-    private int sumOfArray;
 
-    void run(Scanner scanner) {
-        System.out.println("Podaj rozmiar tablicy:");
-        createArray(scanner.nextInt());
-        System.out.printf("Wprowadź %d liczb:\n", array.length);
-        fillArray();
-        sumOfArray();
+    int[] createArray(int sizeOfArray) {
+        return new int[sizeOfArray];
     }
 
-    private void createArray(int sizeOfArray) {
-        array = new int[sizeOfArray];
-    }
-
-    private void fillArray() {
+    void fillArray(int[] array) {
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < array.length; i++) {
             array[i] = scanner.nextInt();
         }
     }
 
-    private void sumOfArray() {
+    void sumOfArray(int[] array) {
+        int sumOfArray = 0;
         for (int element : array) {
             sumOfArray += Math.pow(element, 2);
         }
